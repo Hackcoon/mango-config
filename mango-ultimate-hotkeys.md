@@ -1,6 +1,6 @@
 # Mango Ultimate Hotkeys (fury) — LIVING DOC, keep updated
 
-> Last updated: 2026-09-15 (SUPER+semicolon emoji picker). MangoWC 0.16.2 + DMS 1.6.
+> Last updated: 2026-09-15 (SUPER+Y yazi, SUPER+SHIFT+Y superfile, retired YouTube app). MangoWC 0.16.2 + DMS 1.6.
 > Source of truth: `~/.config/mango/config.conf` (+ `media.conf`, `dms/` fragments).
 > This file is the hotkey reference to hand to any AI. When binds change, update this file AND the config together.
 > Supersedes `~/mango-dms-hotkeys.md` (left untouched as archive).
@@ -28,7 +28,6 @@
 | `SUPER + Shift + O` | Restart portals (screenshare fix) |
 | `SUPER + Shift + C` | Color picker |
 | `SUPER + T` | Theme dark/light toggle |
-| `SUPER + Y` | YouTube web app (brave-fast --app) |
 | `SUPER + Alt + L` | Lock screen |
 | `SUPER + Semicolon` | Emoji picker (spotlight `:e`, needs emojiLauncher) |
 | `CTRL + Alt + P` | Power menu |
@@ -56,6 +55,8 @@
 | `SUPER + Shift + Z` | Private Zen window (`--private-window`) |
 | `SUPER + K` | qutebrowser (keyboard-driven, vim bindings) |
 | `SUPER + C` | VSCodium |
+| `SUPER + Y` | Yazi in Kitty (terminal file manager) |
+| `SUPER + Shift + Y` | Superfile in Kitty (`spf`) |
 | `SUPER + Shift + G` | Brave WebGPU build (heavy, on demand) |
 
 ## Layouts (14, per-tag)
@@ -174,6 +175,7 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 - 2026-09-13: added Appendix with raw hotkey source (emergency restore copy).
 - 2026-09-13: installed qutebrowser 3.7.0 (`nix profile`), bound `SUPER+K`; appendix refreshed.
 - 2026-09-15: added `SUPER+semicolon` emoji picker (`spotlight toggleQuery ":e "`, needs emojiLauncher); appendix refreshed.
+- 2026-09-15: retired YouTube `SUPER+Y` web app (Brave swallowed `--app` into existing session); `SUPER+Y` is now Yazi, `SUPER+SHIFT+Y` Superfile (`spf`), both in Kitty; appendix refreshed.
 
 ## Appendix: raw hotkey source (snapshot 2026-09-15)
 
@@ -203,8 +205,10 @@ bind=SUPER+SHIFT,o,spawn_shell,systemctl --user restart xdg-desktop-portal xdg-d
 bind=SUPER+SHIFT,c,spawn,dms ipc call color-picker toggle
 # Theme dark/light toggle
 bind=SUPER,t,spawn,dms ipc call theme toggle
-# YouTube web app (brave-fast: native Wayland + HW decode, smoothest video)
-bind=SUPER,y,spawn,brave-fast --app=https://www.youtube.com --class=YouTube
+# Yazi file manager
+bind=SUPER,y,spawn,kitty --class yazi -e yazi
+# Superfile file manager
+bind=SUPER+SHIFT,y,spawn,kitty --class superfile -e spf
 # Brave WebGPU build (grainrad etc. — heavier XWayland/Vulkan, on demand)
 bind=SUPER+SHIFT,g,spawn,brave-webgpu
 # Lock screen
