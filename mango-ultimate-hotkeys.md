@@ -57,7 +57,7 @@
 | `SUPER + C` | VSCodium |
 | `SUPER + Shift + V` | Neovim in Kitty (terminal editor) |
 | `SUPER + Y` | Yazi in Kitty (terminal file manager) |
-| `SUPER + Shift + Y` | Superfile in Kitty (`spf`) |
+| `SUPER + Shift + Y` | Superfile in Kitty |
 | `SUPER + Shift + G` | Brave WebGPU build (heavy, on demand) |
 
 ## Layouts (14, per-tag)
@@ -176,7 +176,8 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 - 2026-09-13: added Appendix with raw hotkey source (emergency restore copy).
 - 2026-09-13: installed qutebrowser 3.7.0 (`nix profile`), bound `SUPER+K`; appendix refreshed.
 - 2026-09-15: added `SUPER+semicolon` emoji picker (`spotlight toggleQuery ":e "`, needs emojiLauncher); appendix refreshed.
-- 2026-09-15: retired YouTube `SUPER+Y` web app (Brave swallowed `--app` into existing session); `SUPER+Y` is now Yazi, `SUPER+SHIFT+Y` Superfile (`spf`), both in Kitty; appendix refreshed.
+- 2026-09-15: retired YouTube `SUPER+Y` web app (Brave swallowed `--app` into existing session); `SUPER+Y` is now Yazi, `SUPER+SHIFT+Y` Superfile, both in Kitty; appendix refreshed.
+- 2026-09-15: fixed Superfile bind — nixpkgs binary is `superfile`, not upstream `spf`; appendix refreshed.
 - 2026-09-15: added `SUPER+SHIFT+V` neovim in Kitty; appendix refreshed.
 
 ## Appendix: raw hotkey source (snapshot 2026-09-15)
@@ -210,7 +211,7 @@ bind=SUPER,t,spawn,dms ipc call theme toggle
 # Yazi file manager
 bind=SUPER,y,spawn,kitty --class yazi -e yazi
 # Superfile file manager
-bind=SUPER+SHIFT,y,spawn,kitty --class superfile -e spf
+bind=SUPER+SHIFT,y,spawn,kitty --class superfile -e superfile
 # Brave WebGPU build (grainrad etc. — heavier XWayland/Vulkan, on demand)
 bind=SUPER+SHIFT,g,spawn,brave-webgpu
 # Lock screen
