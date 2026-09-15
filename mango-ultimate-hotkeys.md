@@ -1,6 +1,6 @@
 # Mango Ultimate Hotkeys (fury) — LIVING DOC, keep updated
 
-> Last updated: 2026-09-15 (SUPER+J calculator). MangoWC 0.16.2 + DMS 1.6.
+> Last updated: 2026-09-15 (SUPER+J special workspace, MangoWC 0.17.0). MangoWC 0.17.0 + DMS 1.6.
 > Source of truth: `~/.config/mango/config.conf` (+ `media.conf`, `dms/` fragments).
 > This file is the hotkey reference to hand to any AI. When binds change, update this file AND the config together.
 > Supersedes `~/mango-dms-hotkeys.md` (left untouched as archive).
@@ -58,7 +58,6 @@
 | `SUPER + Shift + V` | Neovim in Kitty (terminal editor) |
 | `SUPER + Y` | Yazi in Kitty (terminal file manager) |
 | `SUPER + Shift + Y` | Superfile in Kitty |
-| `SUPER + J` | Calculator (qalculate-qt) |
 | `SUPER + Shift + G` | Brave WebGPU build (heavy, on demand) |
 
 ## Layouts (14, per-tag)
@@ -131,6 +130,9 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 | `SUPER + U` | Tiling scratchpad |
 | `SUPER + Shift + U` | Minimize |
 | `SUPER + CTRL + U` | Restore minimized |
+| `SUPER + J` | Special workspace overlay |
+| `SUPER + Shift + J` | Send window to special |
+| `SUPER + CTRL + J` | Send silent to special |
 
 ## Monitors (dwm parity; inert on single-monitor)
 
@@ -181,10 +183,11 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 - 2026-09-15: fixed Superfile bind — nixpkgs binary is `superfile`, not upstream `spf`; appendix refreshed.
 - 2026-09-15: added `SUPER+SHIFT+V` neovim in Kitty; appendix refreshed.
 - 2026-09-15: added `SUPER+J` calculator (qalculate-qt, last free bare SUPER+letter); appendix refreshed.
+- 2026-09-15: switched MangoWC 0.16.3 → 0.17.0 (source override until unstable catches up); replaced `SUPER+J` calculator with special workspace trio (`toggle_special_tag` / `tag_special_tag` / `tag_special_silent`); appendix refreshed.
 
 ## Appendix: raw hotkey source (snapshot 2026-09-15)
 
-> Emergency restore copy — 124 binds, count-verified against `config.conf`. Source of truth stays the config files. Refresh per AI rule 8.
+> Emergency restore copy — 126 binds, count-verified against `config.conf`. Source of truth stays the config files. Refresh per AI rule 8.
 
 ```ini
 # ---- DMS keybinds ----
@@ -259,8 +262,6 @@ bind=SUPER+SHIFT,v,spawn,kitty --class nvim -e nvim
 bind=SUPER,Return,spawn,kitty
 # File manager (thunar)
 bind=SUPER,e,spawn,thunar
-# Calculator
-bind=SUPER,j,spawn,qalculate-qt
 # ---- Features / extras ----
 # Fullscreen toggle
 bind=SUPER+SHIFT,f,togglefullscreen
@@ -369,6 +370,12 @@ bind=SUPER+SHIFT,period,spawn_shell,~/.config/mango/cycle-tag.sh prev
 bind=SUPER,u,toggle_scratchpad
 bind=SUPER+SHIFT,u,minimized
 bind=SUPER+CTRL,u,restore_minimized
+# Special workspace overlay
+bind=SUPER,j,toggle_special_tag
+# Send window to special
+bind=SUPER+SHIFT,j,tag_special_tag
+# Send silent to special
+bind=SUPER+CTRL,j,tag_special_silent
 # Kitty dropdown scratchpad
 bind=SUPER+SHIFT,Return,toggle_named_scratchpad,scratch-term,scratch-term,kitty --class scratch-term
 bind=SUPER,1,view,1,0

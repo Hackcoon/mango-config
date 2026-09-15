@@ -1,4 +1,4 @@
-# Free keybinds (fury) — generated 2026-09-15 from `~/.config/mango/config.conf` (124 binds)
+# Free keybinds (fury) — generated 2026-09-15 from `~/.config/mango/config.conf` (126 binds)
 
 > Regenerate after any bind change: parse `^bind=` lines, diff against the
 > key sets below. bare-`SUPER` letters are EXHAUSTED — all 26 taken.
@@ -17,15 +17,15 @@ Key names are mango/XKB style (`semicolon` = `;`, `slash` = `/`,
 
 | Status | Keys |
 |---|---|
-| Taken | `b c f g h i n o p q r s u v y z, 1-9, return, tab, period, bracketleft, bracketright, arrows` |
-| FREE | `a, d, e, j, k, l, m, t, w, x, 0, comma (,), semicolon (;), slash (/), apostrophe ('), minus (-), equal (=), backslash (\), grave (`), space` |
+| Taken | `b c f g h i j n o p q r s u v y z, 1-9, return, tab, period, bracketleft, bracketright, arrows` |
+| FREE | `a, d, e, k, l, m, t, w, x, 0, comma (,), semicolon (;), slash (/), apostrophe ('), minus (-), equal (=), backslash (\), grave (`), space` |
 
 ## SUPER+CTRL
 
 | Status | Keys |
 |---|---|
-| Taken | `d f h k l u, space, return, tab, 1-9, arrows` |
-| FREE | `a, b, c, e, g, i, j, m, n, o, p, q, r, s, t, v, w, x, y, z, 0, comma (,), period (.), semicolon (;), slash (/), apostrophe ('), minus (-), equal (=), brackets, backslash (\), grave (`)` |
+| Taken | `d f h j k l u, space, return, tab, 1-9, arrows` |
+| FREE | `a, b, c, e, g, i, m, n, o, p, q, r, s, t, v, w, x, y, z, 0, comma (,), period (.), semicolon (;), slash (/), apostrophe ('), minus (-), equal (=), brackets, backslash (\), grave (`)` |
 
 ## SUPER+ALT (wide open)
 
@@ -49,7 +49,7 @@ Key names are mango/XKB style (`semicolon` = `;`, `slash` = `/`,
 
 ## Recommendations for the next binds
 
-1. `SUPER+SHIFT+<letter>` first (`a d e j k l m t w x` free, single extra key).
+1. `SUPER+SHIFT+<letter>` first (`a d e k l m t w x` free, single extra key).
 2. `SUPER+slash` or `SUPER+apostrophe` for launcher-style popups (prime, mnemonic-adjacent).
 3. `SUPER+ALT+<letter>` when the SHIFT variant is taken (e.g. `SUPER+ALT+V` was the neovim runner-up).
-4. Keep one spare bare key if possible — there are none left after `J` went to calculator.
+4. Bare `SUPER` letters are exhausted — `J` now runs the special workspace trio, not the old calculator.
