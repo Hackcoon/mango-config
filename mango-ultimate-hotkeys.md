@@ -1,6 +1,6 @@
 # Mango Ultimate Hotkeys (fury) — LIVING DOC, keep updated
 
-> Last updated: 2026-09-15 (SUPER+Y yazi, SUPER+SHIFT+Y superfile, retired YouTube app). MangoWC 0.16.2 + DMS 1.6.
+> Last updated: 2026-09-15 (SUPER+SHIFT+V neovim). MangoWC 0.16.2 + DMS 1.6.
 > Source of truth: `~/.config/mango/config.conf` (+ `media.conf`, `dms/` fragments).
 > This file is the hotkey reference to hand to any AI. When binds change, update this file AND the config together.
 > Supersedes `~/mango-dms-hotkeys.md` (left untouched as archive).
@@ -55,6 +55,7 @@
 | `SUPER + Shift + Z` | Private Zen window (`--private-window`) |
 | `SUPER + K` | qutebrowser (keyboard-driven, vim bindings) |
 | `SUPER + C` | VSCodium |
+| `SUPER + Shift + V` | Neovim in Kitty (terminal editor) |
 | `SUPER + Y` | Yazi in Kitty (terminal file manager) |
 | `SUPER + Shift + Y` | Superfile in Kitty (`spf`) |
 | `SUPER + Shift + G` | Brave WebGPU build (heavy, on demand) |
@@ -176,6 +177,7 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 - 2026-09-13: installed qutebrowser 3.7.0 (`nix profile`), bound `SUPER+K`; appendix refreshed.
 - 2026-09-15: added `SUPER+semicolon` emoji picker (`spotlight toggleQuery ":e "`, needs emojiLauncher); appendix refreshed.
 - 2026-09-15: retired YouTube `SUPER+Y` web app (Brave swallowed `--app` into existing session); `SUPER+Y` is now Yazi, `SUPER+SHIFT+Y` Superfile (`spf`), both in Kitty; appendix refreshed.
+- 2026-09-15: added `SUPER+SHIFT+V` neovim in Kitty; appendix refreshed.
 
 ## Appendix: raw hotkey source (snapshot 2026-09-15)
 
@@ -248,6 +250,8 @@ bind=SUPER+SHIFT,z,spawn,zen-beta --private-window
 bind=SUPER,k,spawn,qutebrowser
 # Editor (vscodium)
 bind=SUPER,c,spawn,codium
+# Editor (neovim in kitty)
+bind=SUPER+SHIFT,v,spawn,kitty --class nvim -e nvim
 # Terminal (kitty)
 bind=SUPER,Return,spawn,kitty
 # File manager (thunar)
