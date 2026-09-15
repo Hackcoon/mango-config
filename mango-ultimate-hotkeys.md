@@ -184,6 +184,7 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 - 2026-09-15: added `SUPER+SHIFT+V` neovim in Kitty; appendix refreshed.
 - 2026-09-15: added `SUPER+J` calculator (qalculate-qt, last free bare SUPER+letter); appendix refreshed.
 - 2026-09-15: switched MangoWC 0.16.3 → 0.17.0 (source override until unstable catches up); replaced `SUPER+J` calculator with special workspace trio (`toggle_special_tag` / `tag_special_tag` / `tag_special_silent`); appendix refreshed.
+- 2026-09-15: fixed grey desktop on re-login — added `exec-once=systemctl --user start dms` (session target is often already active, so its Wants never refires and DMS stayed dead).
 
 ## Appendix: raw hotkey source (snapshot 2026-09-15)
 
