@@ -127,12 +127,12 @@ Note: single-gesture SHIFT-drag-float is impossible — mango retiles EVERY tile
 | `SUPER + Shift + 1..9` | Send window to tag + follow |
 | `SUPER + CTRL + 1..9` | Send silent (no follow) |
 | `SUPER + Shift + [` / `]` | Move window one tag left / right |
-| `SUPER + U` | Tiling scratchpad |
-| `SUPER + Shift + U` | Minimize |
-| `SUPER + CTRL + U` | Restore minimized |
-| `SUPER + J` | Special workspace overlay |
-| `SUPER + Shift + J` | Send window to special |
-| `SUPER + CTRL + J` | Send silent to special |
+| `SUPER + U` | Special workspace overlay |
+| `SUPER + Shift + U` | Send window to special |
+| `SUPER + CTRL + U` | Send silent to special |
+| `SUPER + J` | Tiling scratchpad |
+| `SUPER + Shift + J` | Minimize |
+| `SUPER + CTRL + J` | Restore minimized |
 
 ## Monitors (dwm parity; inert on single-monitor)
 
